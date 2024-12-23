@@ -1,0 +1,41 @@
+{
+    "valid": [
+        {
+            "id": 111,
+            "username": "suntest111",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        }
+    ],
+    "invalid": [
+        {
+            "id": 112,
+            "username": "suntest112",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 113,
+            "username": "suntest113",
+            "password": "Password@1"
+        },
+        {
+            "id": 114,
+            "username": "suntest114",
+            "email": "",
+            "password": "Password@1"
+        },
+        {
+            "id": 115,
+            "username": "suntest115",
+            "email": "sunemail@gmail@.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 116,
+            "username": "suntest116",
+            "email": "sunemail",
+            "password": "Password@1"
+        }
+    ]
+}

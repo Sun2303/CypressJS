@@ -1,0 +1,48 @@
+{
+    "valid": [
+        {
+            "id": 101,
+            "username": "suntest123",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 102,
+            "username": "sun-test_special_character",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        }
+    ],
+    "invalid": [
+        {
+            "id": 103,
+            "username": "suntest123",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 104,
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 105,
+            "username": "",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 106,
+            "username": " suntest68 ",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 107,
+            "username": "suntest@test#Invalid!",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        }
+        
+    ]
+}

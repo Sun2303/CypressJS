@@ -1,0 +1,36 @@
+{
+    "valid": [
+        {
+            "id": 100,
+            "username": "suntest1",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": "",
+            "username": "suntest6",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        }
+    ],
+    "invalid": [
+        {
+            "id": "one$hundred",
+            "username": "suntest2",
+            "email": "suntest11@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": 100,
+            "username": "suntest3",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        },
+        {
+            "id": -100,
+            "username": "suntest5",
+            "email": "suntest@example.com",
+            "password": "Password@1"
+        }
+    ]
+}
