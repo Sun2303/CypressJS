@@ -1,27 +1,33 @@
+import Method from "../utilities/Method";
+import SystemMessage from "../utilities/systemMessage";
+
+const URL = '/users';
+
+
 export default class User {
-    static post(requestedBody) {
-        return cy.api({
-            url: '/users',
-            method: 'POST',
-            body: requestedBody,
-            failOnStatusCode: false
-        })
+    create(requestedBody) {
+        return Method.post(URL,undefined,requestedBody);
     };
 
-    static validateResponse(response, expectedResponse) {
+    create(username, email, password){
+        let body = {username, email, password};
+        return Method.post(URL, undefined,body);
+    };
+
+    validateResponse(response, expectedResponse, expectedStatus) {
         let status = response.status;
-        if (status == 201) {
-            cy.log('Response code: 201 - Successfully');
+        if (status == expectedStatus) {
+            SystemMessage.SuccessfulMessage;
             this._validateResponseBody(response, expectedResponse);
         } else {
-            cy.log('Return an error message')
+            SystemMessage.ErrorMessage;
         }
 
-    }
-    static _validateResponseBody(response, expectedResponse) {
+    };
+    _validateResponseBody(response, expectedResponse) {
         let { username, email, password } = expectedResponse;
         expect(response.body.username).to.eq(username);
         expect(response.body.email).to.eq(email);
         expect(response.body.password).to.eq(password);
-    }
-}
+    };
+};

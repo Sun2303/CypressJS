@@ -4,78 +4,41 @@ import userName from "../fixtures/usernameDataTest.json";
 import emailAdress from "../fixtures/emailDataTest.json";
 import password from "../fixtures/passwordDataTest.json";
 
+describe('Perfoming a functionality test for creating a user', () => {
+    let user = new User();
+    const testUserCreationSuccessful = (description, inputData) => {
+        it(description, () => {
+            inputData.valid.forEach(data => {
+                user.create(data).then(response => {
+                    user.validateResponse(response, data);
+                });
+            });
+        });
+    };
 
-describe('Perform a functionality test for creating a user', () => {
+    const testUserCreationUnsuccessful = (description, inputData) => {
+        it(description, () => {
+            inputData.invalid.forEach(data => {
+                user.create(data).then(response => {
+                    user.validateResponse(response, data);
+                });
+            });
+        });
+    };
+
     //Validate ID parameter
-    it('Successfully creating a user with valid ID', () => {
-        let dataList = idUser.valid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
-    it('Return an error when creating a user with invalid ID', () => {
-        let dataList = idUser.invalid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
+    testUserCreationSuccessful('Successfully creating a user with valid ID', idUser);
+    testUserCreationUnsuccessful('Return an error when creating a user with invalid id', idUser)
 
-    //Validate username parametergit 
-    it('Successfully creating a user with valid username', () => {
-        let dataList = userName.valid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
-    it('Return an error when creating a user with invalid username', () => {
-        let dataList = userName.invalid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
+    //Validate username parameter
+    testUserCreationSuccessful('Successfully creating a user with valid username', userName);
+    testUserCreationUnsuccessful('Return an error when creating a user with invalid username', userName)
 
     //Validate email parameter
-    it('Successfully creating a user with valid email', () => {
-        let dataList = emailAdress.valid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
-    it('Return an error when creating a user with invalid email', () => {
-        let dataList = emailAdress.invalid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
+    testUserCreationSuccessful('Successfully creating a user with valid email address', emailAdress);
+    testUserCreationUnsuccessful('Return an error when creating a user with invalid email address', emailAdress)
 
     //Validate password parameter
-    it('Successfully creating a user with valid password', () => {
-        let dataList = password.valid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
-    it('Return an error when creating a user with invalid password', () => {
-        let dataList = password.invalid;
-        dataList.forEach(data => {
-            User.post(data).then(response => {
-                User.validateResponse(response, data)
-            })
-        })
-    });
-
+    testUserCreationSuccessful('Successfully creating a user with valid password', password);
+    testUserCreationUnsuccessful('Return an error when creating a user with invalid password', password)
 });
