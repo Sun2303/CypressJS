@@ -10,7 +10,7 @@ describe('Perfoming a functionality test for creating a user', () => {
         it(description, () => {
             inputData.valid.forEach(data => {
                 user.create(data).then(response => {
-                    user.validateResponse(response, data);
+                    user.validateResponse(response, data,201);
                 });
             });
         });
@@ -20,7 +20,7 @@ describe('Perfoming a functionality test for creating a user', () => {
         it(description, () => {
             inputData.invalid.forEach(data => {
                 user.create(data).then(response => {
-                    user.validateResponse(response, data);
+                    user.validateResponse(response, data,400);
                 });
             });
         });

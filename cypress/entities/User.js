@@ -1,5 +1,5 @@
 import Method from "../utilities/Method";
-import SystemMessage from "../utilities/systemMessage";
+import SystemMessage from "../utilities/SystemMessage";
 
 const URL = '/users';
 
@@ -17,17 +17,17 @@ export default class User {
     validateResponse(response, expectedResponse, expectedStatus) {
         let status = response.status;
         if (status == expectedStatus) {
-            SystemMessage.SuccessfulMessage;
+            SystemMessage.successfulMessageNewRecord;
             this._validateResponseBody(response, expectedResponse);
         } else {
-            SystemMessage.ErrorMessage;
+            SystemMessage.errorMessage;
         }
 
     };
     _validateResponseBody(response, expectedResponse) {
         let { username, email, password } = expectedResponse;
-        expect(response.body.username).to.eq(username);
-        expect(response.body.email).to.eq(email);
-        expect(response.body.password).to.eq(password);
+        expect(response.body.username.username).to.eq(username);
+        expect(response.body.username.email).to.eq(email);
+        expect(response.body.username.password).to.eq(password);
     };
 };

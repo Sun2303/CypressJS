@@ -3,13 +3,12 @@
         {
             "id": 100,
             "username": "suntest1",
-            "email": "suntest@example.com",
+            "email": "suntest1@example.com",
             "password": "Password@1"
         },
         {
-            "id": "",
             "username": "suntest6",
-            "email": "suntest@example.com",
+            "email": "suntest6@example.com",
             "password": "Password@1"
         }
     ],
@@ -17,19 +16,19 @@
         {
             "id": "one$hundred",
             "username": "suntest2",
-            "email": "suntest11@example.com",
+            "email": "suntest3@example.com",
             "password": "Password@1"
         },
         {
             "id": 100,
             "username": "suntest3",
-            "email": "suntest@example.com",
+            "email": "suntest3@example.com",
             "password": "Password@1"
         },
         {
             "id": -100,
             "username": "suntest5",
-            "email": "suntest@example.com",
+            "email": "suntest5@example.com",
             "password": "Password@1"
         }
     ]

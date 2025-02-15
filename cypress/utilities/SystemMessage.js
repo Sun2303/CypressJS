@@ -3,15 +3,15 @@ const SUCCESSFUL_MSG_EXISTING_RECORD = 'Response code: 200 - Successfully';
 const ERROR_REQUEST = 'Return an error message';
 
 export default class SystemMessage {
-    static get SUCCESSFUL_MSG_NEW_RECORD() {
-        return 'Response code: 201 - Successfully';
+    static get successfulMessageNewRecord() {
+        return cy.log(SUCCESSFUL_MSG_NEW_RECORD);
     }
 
-    static get SUCCESSFUL_MSG_EXISTING_RECORD() {
-       return 'Response code: 200 - Successfully';
+    static get successfulMessageExistingRecord() {
+       return cy.log(SUCCESSFUL_MSG_EXISTING_RECORD);
     }
 
-    static get ERROR_REQUEST() {
-        return 'Return an error message';
+    static get errorMessage() {
+        return cy.log(ERROR_REQUEST);
     }
 }
