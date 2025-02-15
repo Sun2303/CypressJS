@@ -17,7 +17,7 @@ export default class Login {
 
     checkErrorMessage(){
         LoginPage.getMessageText().invoke('text').then(text => {
-            const isUsernameError = text.includes(Login.getErrorUserNameMsg);
+            const isUsernameError = text.includes("username");
             cy.log(isUsernameError ? LoginPage.getErrorUserNameMsg() : LoginPage.getErrorPasswordMsg());
         });
     };
